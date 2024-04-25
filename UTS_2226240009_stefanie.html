@@ -1,0 +1,45 @@
+<!-- 
+NPM : 2226240009
+Nama : Stefanie
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTS Stefanie 2226240009 SI41</title>
+    <script>
+        function hitung(){
+            let gajiPokok = parseInt(document.getElementById("gajiPokok").value);
+            let tunjanganTetap = parseInt(document.getElementById("tunjanganTetap").value);
+            let masaKerja = parseInt(document.getElementById("masaKerja").value);
+            let totalGaji = gajiPokok + tunjanganTetap;
+            if (masaKerja >= 12){
+                THR = totalGaji;
+            }else{
+                THR = masaKerja/12*totalGaji;
+            }
+            document.getElementById("infoTotalGaji").innerHTML = "Total gajinya adalah " + totalGaji;
+            if (totalGaji > 4500000){
+                PPH = 5/100*totalGaji;
+            }else{
+                PPH = 0;
+            }
+            let totalPembayaran = THR + PPH
+            document.getElementById("infoTHRdanPPHdanTotalPembayaran").innerHTML = "THR tergantung dari masa kerja dan total gaji, dimana THR nya yaitu Rp " + THR + 
+            ". PPH nya yaitu Rp " + PPH + 
+            ". Total pembayaran dihitung dari akumulasi THR dan PPH ps. 21, dimana total pembayarannya adalah " + totalPembayaran;
+        }
+    </script>
+</head>
+<body>
+    <h1>Simulasi Perhitungan Total Gaji, THR, PPH, dan Total</h1>
+    Gaji Pokok : <input type = "text" id = "gajiPokok"><br><br>
+    Tunjangan Tetap : <input type = "text" id = "tunjanganTetap"><br><br>
+    Masa Kerja (dalam bulan) : <input type = "text" id = "masaKerja"><br><br>
+    <button onclick = "hitung()">Hitung</button>
+    <p id = "infoTotalGaji"></p>
+    <p id = "infoTHRdanPPHdanTotalPembayaran"></p>
+</body>
+</html>
